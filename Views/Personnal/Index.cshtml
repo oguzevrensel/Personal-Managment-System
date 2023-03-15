@@ -1,0 +1,46 @@
+﻿@model IEnumerable<PersonelMVC.Models.EF.Personnal>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div>
+    <a href="/SavePersonnal" class="btn btn-success">Yeni Kayıt</a>
+</div>
+<hr>
+
+<h2>Personel Listesi</h2>
+
+<table class="table table-striped">
+
+    <thead>
+        <tr>
+            
+            <th>İsim</th>
+            <th>Email</th>
+            <th>Doğum Tarihi</th>
+            <th>Telefon</th>
+            <th>Cinsiyet</th>
+            <th>Departman</th>
+            <th>Güncelle</th>
+            <th>Sil</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var personnal in Model)
+        {
+
+            <tr>
+                
+                <td>@personnal.Name</td>
+                <td>@personnal.EMail</td>
+                <td>@(personnal.Birthday.HasValue ? personnal.Birthday.Value.ToString("dd.MM.yyyy") : "")</td>
+                <td>@personnal.Phone</td>
+                <td>@(personnal.Gender == true ? "Erkek" : "Kadın")</td>
+                <td>@personnal.Department.Name</td>
+                <td><a href="/updatePersonnal/@personnal.Id" class="btn btn-warning">Güncelle</a></td>
+                <td><a href="/deletePersonnal/@personnal.Id" class="btn btn-danger">Sil</a></td>
+            </tr>
+
+        }
+    </tbody>
+</table>

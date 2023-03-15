@@ -1,0 +1,57 @@
+﻿@model PersonelMVC.ViewModels.PersonalManagerVM
+@{
+    ViewBag.Title = "SavePersonnal";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Personel Kaydet</h2>
+
+@using (Html.BeginForm("Save", "Personnal", FormMethod.Post))
+{
+    @Html.HiddenFor(m => m.Personnal.Id)
+    <div class="form-group">
+        @Html.LabelFor(m => m.Personnal.Name)
+        @Html.TextBoxFor(m => m.Personnal.Name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Personnal.Name, "", new { @class = "text-danger" })
+        <br />
+        @Html.LabelFor(m => m.Personnal.EMail)
+        @Html.TextBoxFor(m => m.Personnal.EMail, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Personnal.EMail, "", new { @class = "text-danger" })
+        <br />
+
+        @Html.LabelFor(m => m.Personnal.Birthday)
+        @Html.TextBoxFor(m => m.Personnal.Birthday, ("{0:yyyy-MM-dd}"), new { @class = "form-control", type = "date" })
+        @Html.ValidationMessageFor(m => m.Personnal.Birthday, "", new { @class = "text-danger" })
+        <br />
+        @Html.LabelFor(m => m.Personnal.Phone)
+        @Html.TextBoxFor(m => m.Personnal.Phone, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Personnal.Phone, "", new { @class = "text-danger" })
+        <br />
+        @Html.LabelFor(m => m.Personnal.DepartmanId)
+        @Html.DropDownListFor(m => m.Personnal.DepartmanId, new SelectList(Model.Departments, "Id", "Name"), new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Personnal.DepartmanId, "", new { @class = "text-danger" })
+        <br />
+
+    </div>
+
+
+
+    <div class="radio">
+        <label>
+            @Html.RadioButtonFor(m => m.Personnal.Gender, true) Erkek
+        </label>
+        <label>
+            @Html.RadioButtonFor(m => m.Personnal.Gender, false) Kadın
+        </label>
+        @Html.ValidationMessageFor(m => m.Personnal.Gender, "", new { @class = "text-danger" })
+    </div>
+
+    <button type="submit" class="btn btn-success">Gönder</button>
+
+
+}
+
+@section scripts {
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+}

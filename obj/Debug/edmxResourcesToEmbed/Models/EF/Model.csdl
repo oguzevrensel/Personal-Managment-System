@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PersonelDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Department">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Personnals" Relationship="Self.FK_Personnals_Departments" FromRole="Departments" ToRole="Personnals" />
+  </EntityType>
+  <EntityType Name="Personnal">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Birthday" Type="DateTime" Precision="3" />
+    <Property Name="EMail" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Gender" Type="Boolean" />
+    <Property Name="DepartmanId" Type="Int32" />
+    <NavigationProperty Name="Department" Relationship="Self.FK_Personnals_Departments" FromRole="Personnals" ToRole="Departments" />
+  </EntityType>
+  <Association Name="FK_Personnals_Departments">
+    <End Role="Departments" Type="Self.Department" Multiplicity="0..1" />
+    <End Role="Personnals" Type="Self.Personnal" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Departments">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Personnals">
+        <PropertyRef Name="DepartmanId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="PersonelDBEntities" annotation:LazyLoadingEnabled="false">
+    <EntitySet Name="Departments" EntityType="Self.Department" />
+    <EntitySet Name="Personnals" EntityType="Self.Personnal" />
+    <AssociationSet Name="FK_Personnals_Departments" Association="Self.FK_Personnals_Departments">
+      <End Role="Departments" EntitySet="Departments" />
+      <End Role="Personnals" EntitySet="Personnals" />
+    </AssociationSet>
+    <EntitySet Name="Users" EntityType="PersonelDBModel.User" />
+  </EntityContainer>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Role" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>

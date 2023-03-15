@@ -1,0 +1,31 @@
+﻿@model PersonelMVC.Models.EF.Department
+@{
+    ViewBag.Title = "Departman İşlemleri";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@*<form method="post">
+        <div class="form-group">
+            <label>Departman Adı</label>
+            <input type="text" name="Name" class="form-control"/>
+        </div>
+        <button type="submit" class="btn btn-success">Kaydet</button>
+    </form>*@
+
+@using (Html.BeginForm("save", "department", FormMethod.Post))
+{
+    @Html.HiddenFor(m => m.Id)
+    <div class="form-group">
+        @Html.LabelFor(a => a.Name)
+        @Html.TextBoxFor(a => a.Name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Name, "", new { @class = "text-danger" })
+
+    </div>
+    <button type="submit" class="btn btn-success">Kaydet</button>
+}
+
+@section scripts {
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+}
+

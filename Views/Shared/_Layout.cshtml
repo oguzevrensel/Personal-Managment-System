@@ -1,0 +1,20 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title - Personel MVC</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    @Html.Partial("_Navbar")
+    <div class="container"> 
+        @RenderBody()
+    </div>
+    <script src="~/Scripts/bootstrap.bundle.min.js"></script>
+    <script src="~/Scripts/jquery-1.8.3.min.js"></script>
+    <script src="~/Scripts/custom.js"></script>
+    <script src="~/Scripts/bootbox.min.js"></script>
+    @RenderSection("scripts",false)
+</body>
+</html>

@@ -1,0 +1,38 @@
+﻿@model IEnumerable<PersonelMVC.Models.EF.Department>
+@{
+    ViewBag.Title = "Departmanlar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div>
+    <a href="/save" class="btn btn-success">Yeni Kayıt</a>
+</div>
+<hr>
+<h2>Departman Listesi</h2>
+<table class="table table-striped" id="tblDept">
+
+    <thead>
+        <tr>
+            <th>No</th>
+            <th>Departman</th>
+            <th>Güncelle</th>
+            <th>Sil</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Name</td>
+                <td><a href="/update/@item.Id" class="btn btn-warning">Güncelle</a></td>
+                @*<td><a href="/delete/@item.Id" class="btn btn-danger">Sil</a></td>*@
+                <td>
+                    <button data-id="@item.Id" 
+                            class="btn btn-danger btnDel">Sil</button>
+                </td>
+            </tr>
+
+        }
+    </tbody>
+</table>
