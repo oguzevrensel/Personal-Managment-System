@@ -11,14 +11,20 @@ namespace PersonelMVC.Models.EF
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Personnal
     {
         public int Id { get; set; }
+        [Display(Name = "Personel Adý")]
         public string Name { get; set; }
+        [Display(Name = "Doðum Tarihi")]
         public Nullable<System.DateTime> Birthday { get; set; }
+        [Display(Name = "Mail Adresi")]
         public string EMail { get; set; }
+        [Display(Name = "Telefon No: ")]
         public string Phone { get; set; }
+        [Display(Name = "Cinsiyet")]
         public Nullable<bool> Gender { get; set; }
         public Nullable<int> DepartmanId { get; set; }
     

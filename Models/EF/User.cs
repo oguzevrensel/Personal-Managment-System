@@ -11,12 +11,16 @@ namespace PersonelMVC.Models.EF
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class User
     {
+        [Display(Name = "Kullanýcý Adý")]
         public string UserName { get; set; }
+        [Display(Name = "Þifre")]
         public string Password { get; set; }
         public int Id { get; set; }
+        [Display(Name = "Rol")]
         public string Role { get; set; }
     }
 }

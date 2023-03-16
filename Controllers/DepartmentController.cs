@@ -12,7 +12,10 @@ namespace PersonelMVC.Controllers
     public class DepartmentController : Controller
     {
         PersonelDBEntities db = new PersonelDBEntities();
+
         [Route("")]
+        [Route("homepage")]
+        [Authorize]
         public ActionResult Index()
         {
             IEnumerable<Department> departments = db.Departments.ToList();
