@@ -9,11 +9,12 @@ using PersonelMVC.ViewModels;
 
 namespace PersonelMVC.Controllers
 {
+    
     public class PersonnalController : Controller
     {
         PersonelDBEntities db = new PersonelDBEntities();
         // GET: Personnal
-        [Route("personnals")]
+        
         public ActionResult Index()
         {
             IEnumerable<Personnal> personnals = db.Personnals.Include(x => x.Department).ToList();
@@ -21,7 +22,7 @@ namespace PersonelMVC.Controllers
         }
 
         [HttpGet]
-        [Route("SavePersonnal")]
+        
         public ActionResult Save()
         {
             PersonalManagerVM model = new PersonalManagerVM()
@@ -33,7 +34,7 @@ namespace PersonelMVC.Controllers
         }
 
         [HttpPost]
-        [Route("SavePersonnal")]
+        
         public ActionResult Save(Personnal personnal)
         {
             if(personnal != null && ModelState.IsValid)
@@ -57,7 +58,6 @@ namespace PersonelMVC.Controllers
             return RedirectToAction("Index");
         }
         [HttpGet]
-        [Route("UpdatePersonnal/{id}")]
         public ActionResult Update(int id)
         {
             PersonalManagerVM model = new PersonalManagerVM()
@@ -71,7 +71,7 @@ namespace PersonelMVC.Controllers
             return View("manager",model);
         }
 
-        [Route("DeletePersonnal/{id}")]
+            
         public ActionResult Delete(int id)
         {
             Personnal personnal = db.Personnals.Find(id);

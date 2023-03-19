@@ -15,14 +15,14 @@ namespace PersonelMVC.Controllers
         private PersonelDBEntities db = new PersonelDBEntities();
 
         // GET: Users
-        [Route("users")]
+        
         public ActionResult Index()
         {
             return View(db.Users.ToList());
         }
 
         // GET: Users/Details/5
-        [Route("users/details")]
+        
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -38,7 +38,7 @@ namespace PersonelMVC.Controllers
         }
 
         // GET: Users/Create
-        [Route("users/create")]
+        
         public ActionResult Create()
         {
             return View();
@@ -49,7 +49,7 @@ namespace PersonelMVC.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Route("users/create")]
+        
         public ActionResult Create([Bind(Include = "UserName,Password,Id,Role")] User user)
         {
             if (ModelState.IsValid)
@@ -63,7 +63,7 @@ namespace PersonelMVC.Controllers
         }
 
         // GET: Users/Edit/5
-        [Route("users/edit")]
+        
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -83,7 +83,7 @@ namespace PersonelMVC.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Route("users/edit")]
+        
         public ActionResult Edit([Bind(Include = "UserName,Password,Id,Role")] User user)
         {
             if (ModelState.IsValid)
@@ -96,7 +96,6 @@ namespace PersonelMVC.Controllers
         }
 
         // GET: Users/Delete/5
-        [Route("users/delete/{id}")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -114,7 +113,7 @@ namespace PersonelMVC.Controllers
         // POST: Users/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        [Route("users/delete/{id}")]
+        
         public ActionResult DeleteConfirmed(int id)
         {
             User user = db.Users.Find(id);

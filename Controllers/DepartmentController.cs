@@ -8,30 +8,27 @@ using System.Web.Mvc;
 namespace PersonelMVC.Controllers
 {
 
-
+    
     public class DepartmentController : Controller
     {
         PersonelDBEntities db = new PersonelDBEntities();
 
-        [Route("")]
-        [Route("homepage")]
-        [Authorize]
+        
+        
         public ActionResult Index()
         {
             IEnumerable<Department> departments = db.Departments.ToList();
             return View(departments);
         }
 
-        [HttpGet]
-        [Route("save")]
-        public ActionResult Create()
+        [HttpGet]        
+        public ActionResult Save()
         {
             Department model = new Department();
             return View("manager",model);
         }
 
         [HttpPost]
-        [Route("save")]
         public ActionResult Save(Department department)
         {
 
@@ -57,7 +54,7 @@ namespace PersonelMVC.Controllers
         }
 
         [HttpGet]
-        [Route("Update/{id}")]
+        
         public ActionResult Update(int id)
         {
             Department model = db.Departments.Find(id);
@@ -66,7 +63,7 @@ namespace PersonelMVC.Controllers
             return View("manager",model);
         }
 
-        [Route("departman/delete/{id}")]
+        
         public JsonResult Delete(int id)
         {
             Department department = db.Departments.Find(id);

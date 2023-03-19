@@ -4,7 +4,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <div>
-    <a href="/save" class="btn btn-success">Yeni Kayıt</a>
+    <a href="Department/Save" class="btn btn-success">Yeni Kayıt</a>
 </div>
 <hr>
 <h2>Departman Listesi</h2>
@@ -25,7 +25,7 @@
             <tr>
                 <td>@item.Id</td>
                 <td>@item.Name</td>
-                <td><a href="/update/@item.Id" class="btn btn-warning">Güncelle</a></td>
+                <td><a href="Department/update/@item.Id" class="btn btn-warning">Güncelle</a></td>
                 @*<td><a href="/delete/@item.Id" class="btn btn-danger">Sil</a></td>*@
                 <td>
                     <button data-id="@item.Id" 

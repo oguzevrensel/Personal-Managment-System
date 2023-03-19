@@ -4,7 +4,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <div>
-    <a href="/SavePersonnal" class="btn btn-success">Yeni Kayıt</a>
+    <a href="/Personnal/Save" class="btn btn-success">Yeni Kayıt</a>
 </div>
 <hr>
 
@@ -37,8 +37,8 @@
                 <td>@personnal.Phone</td>
                 <td>@(personnal.Gender == true ? "Erkek" : "Kadın")</td>
                 <td>@personnal.Department.Name</td>
-                <td><a href="/updatePersonnal/@personnal.Id" class="btn btn-warning">Güncelle</a></td>
-                <td><a href="/deletePersonnal/@personnal.Id" class="btn btn-danger">Sil</a></td>
+                <td><a href="/Personnal/Update/@personnal.Id" class="btn btn-warning">Güncelle</a></td>
+                <td><a href="/Personnal/Delete/@personnal.Id" class="btn btn-danger">Sil</a></td>
             </tr>
 
         }

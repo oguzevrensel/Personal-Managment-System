@@ -11,7 +11,7 @@ $(document).ready(function () {
 
                 $.ajax({
                     type: 'GET',
-                    url: 'departman/delete/' + id,
+                    url: 'department/delete/' + id,
                     success: function () {
                         btn.parent().parent().remove();
                     },
