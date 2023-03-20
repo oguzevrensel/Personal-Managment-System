@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PersonelMVC.Models.EF;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -37,7 +38,14 @@ namespace PersonelMVC.Security
 
         public override string[] GetRolesForUser(string username)
         {
-            return new string[] { "Admin", "User"};
+            PersonelDBEntities entities = new PersonelDBEntities();
+
+            var user = entities.Users.FirstOrDefault(a => a.UserName == username);
+           
+          
+            if (user != null) return new string[] { user.Role.Trim() };
+            
+            return new string[] {};
         }
 
         public override string[] GetUsersInRole(string roleName)
