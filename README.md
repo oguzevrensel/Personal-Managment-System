@@ -1,5 +1,6 @@
 # Personal-Managment-System
-Personal Managment System Application .Net Framework MVC - Entity Framework Core and Bootstrap for the front-end.
+Personal Managment System Application .Net Framework MVC - Entity Framework Core and Bootstrap for the front-end. </br>
+This is a web application built with .NET Framework MVC and Bootstrap, designed to manage employees and departments in a database. The application features CRUD operations for both entities, as well as user authentication and authorization.
 
 # Features
 The Personal Management System provides the following features:
