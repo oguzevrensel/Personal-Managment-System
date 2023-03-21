@@ -15,6 +15,7 @@ Microsoft SQL Server Management Studio </br>
 .NET Framework </br>
 Entity Framework </br>
 Bootstrap </br>
+Bootbox </br>
 # Installation 
 To install and run the application, follow these steps:
 
