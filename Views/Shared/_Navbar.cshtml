@@ -12,10 +12,15 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/Personnal/Index">Personeller</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/Users/Index">Kullanıcılar</a>
-                </li>
+                @if (User.IsInRole("Admin"))
+                {
+                    <li class="nav-item">
+                        <a class="nav-link" href="/Users/Index">Kullanıcılar</a>
+                    </li>
+                }
                 
+
+
             </ul>
             <div style="float:right"> 
               <a class="nav-link" href="/Security/Logout">Hoşgeldin @HttpContext.Current.User.Identity.Name - Çıkış Yap</a>

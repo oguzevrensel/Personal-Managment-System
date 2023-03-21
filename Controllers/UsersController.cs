@@ -10,6 +10,7 @@ using PersonelMVC.Models.EF;
 
 namespace PersonelMVC.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class UsersController : Controller
     {
         private PersonelDBEntities db = new PersonelDBEntities();

@@ -22,7 +22,7 @@ namespace PersonelMVC.Controllers
         }
 
         [HttpGet]
-        [Authorize(Roles = "Admin")]
+        
         public ActionResult Save()
         {
             PersonalManagerVM model = new PersonalManagerVM()
