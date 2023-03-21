@@ -1,11 +1,11 @@
 # Personal-Managment-System
 Personal Managment System Application .Net Framework MVC - Entity Framework Core and Bootstrap for the front-end. </br>
-This is a web application built with .NET Framework MVC and Bootstrap, designed to manage employees and departments in a database. The application features CRUD operations for both entities, as well as user authentication and authorization.
+ This is a web application built with .NET Framework MVC and Bootstrap, designed to manage personals and departments in a database. The application features CRUD operations for both entities, as well as user authentication and authorization.
 
 # Features
 The Personal Management System provides the following features:
 
- => Manage Personals CRUD Operations: Add, edit, delete, and view personal records </br>
+=> Manage Personals CRUD Operations: Add, edit, delete, and view personal records </br>
 => Manage Departments CRUD Operations: Add, edit, delete, and view department records </br>
 => Manage Users and CRUD Operations if your role is "Admin ": Add, edit, delete, and view user records </br>
 => User authentication and authorization: Users can register and login with their credentials, and different roles can be assigned to users to restrict their access to certain features. </br>
