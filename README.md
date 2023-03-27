@@ -10,7 +10,10 @@ The Personal Management System provides the following features:
 => Manage Users and CRUD Operations if your role is "Admin ": Add, edit, delete, and view user records </br>
 => User authentication and authorization: Users can register and login with their credentials, and different roles can be assigned to users to restrict their access to certain features. </br>
 => Responsive and user-friendly UI using Bootstrap </br>
-
+# Screenshots
+![Ekran Görüntüsü (64)](https://user-images.githubusercontent.com/73538407/228004611-a1af8ab9-e36e-47be-aa0f-c5e495146b05.png)
+![Ekran Görüntüsü (65)](https://user-images.githubusercontent.com/73538407/228004745-e323f9cc-0b0d-4540-b52c-766da3e6987f.png)
+</br>
 # Requirements
 To run this application, you will need the following:
 
